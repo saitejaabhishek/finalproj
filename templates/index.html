@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <style>
+    body {
+      background-image: url('/static/background.jpeg');
+      background-repeat: no-repeat;
+      background-size: 100%;
+      }
+
+    .flex-container {
+      display: flex;
+      flex-direction: column;
+      }
+
+    .row1 {
+      font-size: 50px;
+      padding-top: 100px;
+      text-align: center;  
+      }
+
+    .row2 {
+      font-size: 30px;
+      padding-top: 50px;
+      text-align: center;
+      }
+    
+    .row3 {
+      font-size: 30px;
+      padding-top: 50px;
+      text-align: center;
+      }
+
+    .combo{
+      padding:4px;
+      }
+  </style>
+</head>
+<body>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="flex-container">
+        <div class="row1">TimeLog Parser</div>
+        <div class="row2">
+          <form method="POST">
+            <h2>
+              <label for="timelogfile">Choose TimeLog data file : </label>
+              <select class="combo" name="timelogfile">
+                <option value="">Select file</option>
+                <option value="TimeLogCarbon.txt">TimeLogCarbon</option>
+                <option value="TimeLogEnergy.txt">TimeLogEnergy</option>
+                <option value="TimeLogNitrogen.txt">TimeLogNitrogen</option>
+                <option value="TimeLogWater.txt">TimeLogWater</option>
+                <option value="TimeLogWatershed.txt">TimeLogWatershed</option>
+              </select>
+            </h2>
+            <br>
+            <input class="btn btn-primary" type="submit" value="Submit">
+          </form>
+        </div>
+        <div class="row3">
+          <h2><label>{{file_not_found_error}}</label></h2>
+          <h2><label>{{file_name}} &nbsp;  {{result}}</label></h2>
+        </div>  
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</body>
+</html>
